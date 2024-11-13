@@ -1,0 +1,772 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+/* menu */
+
+.fade {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.197);
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    display: none;
+}
+
+.menubar {
+    width: 300px;
+    max-width: 90%;
+    height: 100vh;
+    background-color: white;
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    border-right: 1px solid gainsboro;
+    display: flex;
+    flex-direction: column;
+    transform: translateX(-150%);
+    transition: all .2s;
+}
+
+.menubar nav {
+    display: flex;
+    flex-direction: column;
+}
+
+.menubar nav a {
+    padding: 20px 20px;
+    color: black;
+    border-left: 3px solid transparent;
+    transition: .1s;
+    border-bottom: 1px solid gainsboro;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.menubar nav a:hover {
+    border-left: 3px solid var(--primary);
+    color: var(--primary);
+    transition: .1s;
+}
+
+.menubar .logo {
+    padding: 20px 10px;
+    border-bottom: 1px solid gainsboro;
+}
+
+
+:root {
+    --border: rgba(173, 173, 173, 0.363);
+    --primary: rgb(226, 43, 43);
+    --white: #ffffff;
+    --secundary: whitesmoke;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+::selection {
+    color: var(--white);
+    background-color: var(--primary);
+}
+
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+}
+
+@media (max-width: 908px){
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        background-color: rgb(255, 255, 255);
+    }    
+}
+
+
+/* header */
+
+header {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* margin: 3% 0; */
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+header h1 {
+    color: white;
+}
+
+header nav {
+    display: flex;
+    gap: 10px;
+    color: white;
+}
+
+header nav a {
+    color: rgb(0, 0, 0);
+    font-weight: 700;
+    padding: 10px;
+    border-bottom: 3px solid transparent;
+    transition: .1s;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+header nav a#here {
+    border-bottom: 3px solid var(--primary);
+    color: var(--primary);
+    transition: .1s;
+}
+
+header nav a:hover {
+    border-bottom: 3px solid var(--primary);
+    color: var(--primary);
+    transition: .1s;
+}
+
+header .btn {
+    display: none;
+}
+
+header .btn button {
+    border: none;
+    background-color: transparent;
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+    cursor: pointer;
+    transition: .1s;
+}
+
+header .btn button:hover {
+    background-color: rgba(245, 245, 245, 0.115);
+}
+
+/* Header responsive */
+
+@media (max-width: 950px) {
+    header {
+        width: 100%;
+        padding: 10px 4px;
+        height: 90px;
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 1;
+        border-bottom: 1px solid var(--border);
+        position: absolute;
+        /* top: 0; */
+    }
+
+    header h1 {
+        color: white;
+    }
+
+    header nav {
+        display: none;
+        gap: 10px;
+        color: white;
+    }
+
+    header .btn {
+        display: flex;
+    }
+
+    header .btn button {
+        border: none;
+        background-color: transparent;
+        color: rgb(255, 255, 255);
+        width: 50px;
+        height: 50px;
+        border-radius: 100%;
+    }
+}
+
+
+/* fim do header e inicio do main */
+
+main {
+    width: 1200px;
+    max-width: 98%;
+    display: flex;
+    align-self: center;
+    justify-content: start;
+    gap: 4px;
+    margin: 10px 0;
+}
+
+main .smax {
+    width: 70%;
+    height: auto;
+    /* background-color: black; */
+} 
+
+main .smax p {
+    font-size: 16px;
+}
+
+@media (max-width: 1200px){
+    main .smax p {
+        font-size: 16px;
+    }
+}
+
+main .smin {
+    width: 30%;
+    height: auto;
+    padding: 0 20px;
+    /* background-color: blue; */
+} 
+
+@media (max-width: 1200px){
+    main {
+        width: 98%;
+        max-width: 98%;
+        display: flex;
+        align-self: center;
+        justify-content: start;
+        flex-direction: column;
+        gap: 4px;
+        margin: 10px 0;
+    }
+    
+    main .smax {
+        width: 100%;
+        height: auto;
+    } 
+    
+    main .smin {
+        width: 100%;
+        height: auto;
+        padding: 0 20px;
+    } 
+}
+
+@media (max-width: 908px){
+    main .smin {
+        width: 100%;
+        height: auto;
+        padding: 0 0px;
+    } 
+}
+
+/* bobbles */
+
+.bobles {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.bobles .bb {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+}
+
+.bb .capa {
+    width: 100px;
+    height: 100px;
+    background-color: whitesmoke;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.bb .conteudo {
+    width: 230px;
+}
+
+.bb a {
+    color: black;
+    transition: .2s;
+}
+
+.bb a:hover{
+    color: rgb(92, 90, 90);
+    text-decoration: underline;
+}
+
+@media (max-width: 1200px){
+    .bobles {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .bobles .bb {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+    }
+    
+    .bb .capa {
+        width: 100px;
+        height: 100px;
+        background-color: whitesmoke;
+        border-radius: 100%;
+        overflow: hidden;
+    }
+    
+    .bb .conteudo {
+        width: 500px;
+        max-width: 100%;
+    }
+    
+    .bb a {
+        color: black;
+        transition: .2s;
+    }
+    
+    .bb a:hover{
+        color: rgb(92, 90, 90);
+        text-decoration: underline;
+    }
+    
+}
+
+@media (max-width: 508px){
+    .bobles .bb {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+    }
+
+    .bb .conteudo {
+        width: 100%;
+        max-width: 100%;
+        text-align: center;
+    }
+    
+    main .smin {
+        width: 100%;
+        height: auto;
+        padding: 0 40px;
+    } 
+}
+
+
+/* cards */
+
+.cards {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    flex-wrap: wrap;
+    align-items: start;
+}
+
+.cards .card .capa {
+    position: relative;
+    overflow: hidden;
+}
+
+.cards .card .absolute {
+    position: absolute;
+    top: -100%;
+    color: white;
+    padding: 10px;
+    background: linear-gradient(to top, transparent, rgba(0, 0, 0, 0.5) 70%);
+    transition: .2s;
+}
+
+.cards .card:hover .absolute {
+    top: 0;
+}
+
+.cards .card .absolute h4{
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.cards .card {
+    width: 49.6%;
+    height: auto;
+    background: white;
+    /* border: 1px solid gainsboro; */
+    margin-bottom: 20px;
+}
+
+.cards .card a {
+    color: black;
+    transition: .2s;
+}
+
+.cards .card a:hover{
+    color: rgb(92, 90, 90);
+    text-decoration: underline;
+}
+
+.cards .card .conteudo {
+    padding: 10px 0;
+    box-sizing: border-box;
+    letter-spacing: 2px;
+}
+
+.cards .card h2 {
+    font-weight: 400;
+    font-size: 20px;
+}
+
+@media (max-width: 914px){
+    .cards .card {
+        width: 100%;
+        height: auto;
+        background: white;
+        /* border: 1px solid gainsboro; */
+        margin-bottom: 20px;
+    }
+}
+
+
+/*  */
+
+/* cards */
+
+.cardfinal {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    flex-wrap: wrap;
+    align-items: start;
+}
+
+
+.cardfinal .card .capa {
+    position: relative;
+    overflow: hidden;
+    width: 300px;
+    height: 200px;
+}
+
+.cardfinal .card .absolute {
+    position: absolute;
+    top: -100%;
+    color: white;
+    padding: 10px;
+    background: linear-gradient(to top, transparent, rgba(0, 0, 0, 0.5) 70%);
+    transition: .2s;
+}
+
+.cardfinal .card:hover .absolute {
+    top: 0;
+}
+
+.cardfinal .card .absolute h4{
+    font-size: 20px;
+    font-weight: 200;
+}
+
+.cardfinal .card {
+    width: 100%;
+    height: auto;
+    background: white;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.cardfinal .card a {
+    color: black;
+    transition: .2s;
+}
+
+.cardfinal .card a p {
+    color: gray;
+    margin: 5px 0;
+}
+
+.cardfinal .card a:hover{
+    color: rgb(92, 90, 90);
+    text-decoration: underline;
+}
+
+.cardfinal .card .conteudo {
+    padding: 10px 0;
+    box-sizing: border-box;
+    letter-spacing: 2px;
+    width: 300px;
+}
+
+.cardfinal .card h2 {
+    font-weight: 400;
+    font-size: 20px;
+}
+
+@media (max-width: 914px){
+    .cardfinal .card {
+        width: 100%;
+        height: auto;
+        background: white;
+        /* border: 1px solid gainsboro; */
+        margin-bottom: 20px;
+    }
+
+    .cardfinal .card .capa {
+        position: relative;
+        overflow: hidden;
+        width: 200px;
+        height: 100px;
+    }
+    
+    .cardfinal .card h2 {
+        font-weight: 400;
+        font-size: 13px;
+    }
+}
+
+
+/* theme */
+
+.theme {
+    width: 100%;
+    padding: 2% 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    color: #d90b0b;
+}
+
+.theme span {
+    color: #00799c;
+}
+
+.theme .br {
+    width: 0%;
+    height: 2px;
+    background-color: rgb(216, 5, 5);
+}
+
+@media (max-width: 508px){
+    .theme {
+        width: 100%;
+        padding: 2% 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 10px;
+        margin-bottom: 10px;
+    }
+    
+}
+
+/* destaques */
+
+.destaques {
+    width: 1200px;
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 4px;
+}
+
+.destaques .big_destaques_no_site {
+    width: 70%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    transition: .2s;
+}
+
+.destaques .big_destaques_no_site img {
+    width: 100%;
+    height: 100%;
+    transition: .2s;
+}
+
+.destaques .big_destaques_no_site:hover img {
+    transform: scale(1.1, 1.1);
+}
+
+.destaques .big_destaques_no_site .conteudo_site {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px;
+    height: auto;
+    padding-top: 40%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.893) 30%, transparent);
+}
+
+.destaques .big_destaques_no_site .conteudo_site h3 {
+    font-size: 29px;
+    font-weight: 300;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+.destaques .big_destaques_no_site .conteudo_site p {
+    font-size: 14px;
+    margin-top: 10px;
+    color: #fff;
+    letter-spacing: 2px;
+}
+
+
+/* ESTILOS DO ANY DESTAQUES DO SITE XUGUTV */
+
+.any_destaques_no_site {
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+    justify-content: start;
+    gap: 4px;
+}
+
+.lettle_destaques1 {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.lettle_destaques1 img {
+    width: 100%;
+    height: 100%;
+    transition: .2s;
+}
+
+.lettle_destaques1:hover img {
+    transform: scale(1.1, 1.1);
+}
+
+.lettle_destaques1 .conteudo_site_lettle {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    position: absolute;
+    bottom: 0;
+    padding-top: 40%;
+    padding-bottom: 20px;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.893) 30%, transparent);
+}
+.lettle_destaques1 .conteudo_site_lettle h3{
+    font-size: 15px;
+    color: white;
+    font-weight: 100;
+    letter-spacing: 2px;
+}
+.lettle_destaques1 .conteudo_site_lettle p{
+    font-size: 10px;
+    color: rgb(255, 255, 255);
+}
+
+/* ESTILOS DO ANY DESTAQUES DO SITE XUGUTV (sua responsividade)*/
+
+@media (max-width: 1200px){
+    .destaques {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .destaques .big_destaques_no_site {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        transition: .2s;
+    }
+
+    .destaques .big_destaques_no_site h3{
+        letter-spacing: 2px;
+        font-size: 10px;
+    }
+
+    .any_destaques_no_site {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: start;
+        flex-direction: row;
+        justify-content: start;
+        gap: 4px;
+    }
+
+    .lettle_destaques1 {
+        position: relative;
+        width: 33,3%;
+        height: 200px;
+        overflow: hidden;
+    }    
+
+}
+
+@media (max-width: 908px){
+    .destaques {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .destaques .big_destaques_no_site {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        transition: .2s;
+    }
+    
+    .any_destaques_no_site {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: start;
+        flex-direction: column;
+        justify-content: start;
+        gap: 4px;
+    }
+
+    .lettle_destaques1 {
+        position: relative;
+        width: 100%;
+        height: 300px;
+        overflow: hidden;
+    }
+
+    .lettle_destaques1 .conteudo_site_lettle h3{
+        font-size: 20px;
+        font-weight: 300;
+        color: #fff;
+        letter-spacing: 2px;
+    }
+}
